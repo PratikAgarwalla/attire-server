@@ -41,15 +41,15 @@ app.use(
 app.use(helmet());
 
 // 2. Limit the number of request from an IP address
-const limiter = rateLimit({
-  limit: 200,
-  windowMs: 60 * 60 * 1000,
-  message: "Too many request from the same IP address. Try after an hour",
-});
-app.use(limiter);
+// const limiter = rateLimit({
+//   limit: 200,
+//   windowMs: 60 * 60 * 1000,
+//   message: "Too many request from the same IP address. Try after an hour",
+// });
+// app.use(limiter);
 
 // 3. To make body part of the req object
-app.use(express.json({ limit: "10kb" }));
+app.use(express.json());
 // 4. To allow cookies to be accessed through req object
 app.use(cookieParser());
 
