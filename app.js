@@ -19,9 +19,20 @@ const app = express();
 // MIDDLEWARE
 
 // 0. CORS
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://attire-clothing.vercel.app",
+];
+
 app.use(
   cors({
-    origin: "https://attire-clothing.vercel.app, http://localhost:5173",
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
