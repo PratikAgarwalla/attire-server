@@ -21,7 +21,7 @@ const app = express();
 // 0. CORS
 app.use(
   cors({
-    origin: "https://attire-clothing.vercel.app/",
+    origin: "https://attire-clothing.vercel.app, http://localhost:5173",
     credentials: true,
   })
 );
