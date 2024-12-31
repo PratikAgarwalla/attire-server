@@ -37,7 +37,7 @@ const createSendToken = (user, statusCode, res) => {
 
 exports.signup = catchAsync(async (req, res, next) => {
   const user = await User.create(req.body);
-  const url = "http://localhost:5173/";
+  const url = "https://attire-clothing.vercel.app/";
   await new Email(user, url).sendWelcome();
 
   createSendToken(user, 200, res);
