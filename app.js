@@ -22,6 +22,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",
   "https://attire-clothing.vercel.app",
+  "https://attire-fashion.vercel.app"
 ];
 
 app.use(
